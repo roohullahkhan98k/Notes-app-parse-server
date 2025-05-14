@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Parse from "../../parseConfig";
 import Modal from "../../components/Modal/Modal";
 import SnackbarAlert from "../../components/SnackbarAlert/SnackbarAlert";
+import AdminTable from "../../components/AdminTable/AdminTable";
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
   Button,
   DialogContentText,
 } from "@mui/material";
@@ -121,53 +115,13 @@ const AdminPanel = () => {
   }, []);
 
   return (
-    <div style={{ padding: "2rem 0" }}>
-      <TableContainer component={Paper}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>No</TableCell>
-              <TableCell>Email</TableCell>
-              <TableCell align="right">Actions</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {users.map((user, index) => (
-              <TableRow key={user.id}>
-                <TableCell>{index + 1}</TableCell>
-                <TableCell>{user.email}</TableCell>
-                <TableCell align="right">
-                  <Button
-                    variant="outlined"
-                    color="primary"
-                    onClick={() => navigate(`/user-notes/${user.id}`)}
-                    style={{ marginRight: "0.5rem" }}
-                  >
-                    View Notes
-                  </Button>
-                  <Button
-                    variant="contained"
-                    color="error"
-                    onClick={() => handleSuspendClick(user)}
-                    style={{ marginRight: "0.5rem" }}
-                    disabled={user.suspended}
-                  >
-                    Suspend
-                  </Button>
-                  <Button
-                    variant="contained"
-                    color="success"
-                    onClick={() => handleReactivateClick(user)}
-                    disabled={!user.suspended}
-                  >
-                    Reactivate
-                  </Button>
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+   <div style={{ padding: '2rem 0' }}>
+      <AdminTable
+        users={users}
+        handleSuspendClick={handleSuspendClick}
+        handleReactivateClick={handleReactivateClick}
+        navigate={navigate}
+      />
 
       <Modal
         open={modalOpen}

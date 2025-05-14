@@ -4,12 +4,14 @@ import NotificationDropdown from "../../components/NotificationDropdown";
 import Modal from "../../components/Modal/Modal";
 import NoteCard from "../../components/NoteCard/NoteCard";
 import SnackbarAlert from "../../components/SnackbarAlert/SnackbarAlert";
+import NoteForm from "../../components/NoteForm/NoteForm";
+import NoteList from "../../components/NoteList/NoteList";
+
 import {
   Container,
   Typography,
   TextField,
   Button,
-  Grid,
   Box,
   CircularProgress,
   Paper,
@@ -155,30 +157,14 @@ const Home = () => {
         <Typography variant="h4" gutterBottom fontWeight="bold" color="primary">
           Notes
         </Typography>
-
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-          <TextField
-            label="Title"
-            fullWidth
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-          <TextField
-            label="Write your note..."
-            multiline
-            rows={4}
-            fullWidth
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-          />
-          <Button
-            variant="contained"
-            onClick={handleSave}
-            sx={{ alignSelf: "flex-start", borderRadius: 20, px: 4 }}
-          >
-            {editingNoteId ? "Update Note" : "Add Note"}
-          </Button>
-        </Box>
+        <NoteForm
+          title={title}
+          content={content}
+          handleSave={handleSave}
+          handleTitleChange={(e) => setTitle(e.target.value)}
+          handleContentChange={(e) => setContent(e.target.value)}
+          editingNoteId={editingNoteId}
+        />
       </Paper>
 
       <Typography variant="h5" gutterBottom fontWeight="bold">
@@ -190,29 +176,22 @@ const Home = () => {
           <CircularProgress />
         </Box>
       ) : (
-        <Grid container spacing={3}>
-          {notes.map((note) => (
-            <Grid item xs={12} sm={6} key={note.id}>
-              <NoteCard
-                note={note}
-                handleEdit={handleEdit}
-                handleDelete={handleDelete}
-                handleNoteClick={handleNoteClick}
-                setActiveNoteId={setActiveNoteId}
-                setShareModalOpen={setShareModalOpen}
-              />
-            </Grid>
-          ))}
-        </Grid>
+        <NoteList
+          notes={notes}
+          handleEdit={handleEdit}
+          handleDelete={handleDelete}
+          handleNoteClick={handleNoteClick}
+          setActiveNoteId={setActiveNoteId}
+          setShareModalOpen={setShareModalOpen}
+        />
       )}
 
-      
-  <SnackbarAlert
-  open={alert.open}
-  message={alert.message}
-  severity={alert.severity}
-  onClose={() => setAlert({ ...alert, open: false })}
-/>
+      <SnackbarAlert
+        open={alert.open}
+        message={alert.message}
+        severity={alert.severity}
+        onClose={() => setAlert({ ...alert, open: false })}
+      />
 
       <Modal
         open={shareModalOpen}
