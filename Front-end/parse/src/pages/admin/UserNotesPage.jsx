@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import NoteCard from "../../components/NoteCard/NoteCard";
 import Parse from "../../parseConfig";
 
 import {
   Container,
   Typography,
-  Grid,
-  Card,
-  CardContent,
-  CardHeader,
   Alert,
   CircularProgress,
   Box,
+  Grid
 } from "@mui/material";
 
 const UserNotesPage = () => {
@@ -77,64 +75,13 @@ const UserNotesPage = () => {
           No notes available for this user.
         </Alert>
       ) : (
-        <Grid container spacing={3}>
-          {notes.map((note) => (
-            <Grid sx={12}  key={note.id}>
-              <Card
-                elevation={4}
-                sx={{
-                  borderRadius: 2,
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  transition: "transform 0.2s, box-shadow 0.2s",
-                  "&:hover": {
-                    transform: "translateY(-4px)",
-                    boxShadow: 6,
-                  },
-                }}
-              >
-                <CardHeader
-                  title={note.get("title")}
-                  titleTypographyProps={{
-                    variant: "h6",
-                    fontWeight: "bold",
-                    color: "primary",
-                  }}
-                  sx={{ pb: 0 }}
-                />
-                <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{
-                      display: "-webkit-box",
-                      WebkitLineClamp: 6,
-                      WebkitBoxOrient: "vertical",
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                    }}
-                  >
-                    {note.get("content")}
-                  </Typography>
-
-                  {note.get("createdAt") && (
-                    <Typography
-                      variant="caption"
-                      color="text.secondary"
-                      display="block"
-                      mt={2}
-                    >
-                      Created on:{" "}
-                      {new Date(note.get("createdAt")).toLocaleDateString()} at{" "}
-                      {new Date(note.get("createdAt")).toLocaleTimeString()}
-                    </Typography>
-                  )}
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
+   <Grid container spacing={3}>
+       {notes.map((note) => (
+   <Grid item xs={12} key={note.id}>
+     <NoteCard note={note} variant="userNotes" hideActions={true} />
+    </Grid>
+  ))}
+</Grid>
       )}
     </Container>
   );
