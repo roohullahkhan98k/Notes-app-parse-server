@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Parse from "../../parseConfig";
-import Modal from "../../components/Modal/Modal";
-import SnackbarAlert from "../../components/SnackbarAlert/SnackbarAlert";
-import AdminTable from "../../components/AdminTable/AdminTable";
+import { AdminTable,SnackbarAlert,Modal } from "../../components";
 import {
   Button,
   DialogContentText,

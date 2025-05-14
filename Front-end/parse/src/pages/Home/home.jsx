@@ -1,12 +1,6 @@
 import { useState, useEffect } from "react";
 import Parse from "../../parseConfig";
-import NotificationDropdown from "../../components/NotificationDropdown";
-import Modal from "../../components/Modal/Modal";
-import NoteCard from "../../components/NoteCard/NoteCard";
-import SnackbarAlert from "../../components/SnackbarAlert/SnackbarAlert";
-import NoteForm from "../../components/NoteForm/NoteForm";
-import NoteList from "../../components/NoteList/NoteList";
-
+import { NotificationDropdown,Modal,SnackbarAlert,NoteForm,NoteList } from "../../components";
 import {
   Container,
   Typography,
