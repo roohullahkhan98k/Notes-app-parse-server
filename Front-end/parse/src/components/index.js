@@ -10,4 +10,6 @@ export {default as AnalyticsOverview} from './AdminAnalytics/AnalyticsOverview';
 export {default as UsersNotesBarChart} from './AdminAnalytics/UsersNotesBarChart';
 export {default as UserStatsCard} from './AdminAnalytics/UserStatsCard';
 export {default as UserStatusChart} from './AdminAnalytics/UserStatusChart';
+export {default as Profile} from './ProfileComponent/Profile';
+export {default as UpdateProfile} from './ProfileComponent/UpdateProfile';
 

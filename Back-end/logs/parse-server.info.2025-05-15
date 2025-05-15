@@ -217,3 +217,17 @@
 {"level":"info","message":"Create new client: 0e74db18-1ea6-4cac-ab80-360bc9a0eeed","timestamp":"2025-05-15T05:26:48.873Z"}
 {"functionName":"getNotes","level":"info","message":"Ran cloud function getNotes for user dm1bSATgbP with:\n  Input: {}\n  Result: []","params":{},"timestamp":"2025-05-15T05:26:48.881Z","user":"dm1bSATgbP"}
 {"functionName":"getNotes","level":"info","message":"Ran cloud function getNotes for user dm1bSATgbP with:\n  Input: {}\n  Result: []","params":{},"timestamp":"2025-05-15T05:26:48.897Z","user":"dm1bSATgbP"}
+{"level":"info","message":"Client disconnect: 2ece9100-eb4b-4b2f-9c62-d997c91acded","timestamp":"2025-05-15T05:38:28.558Z"}
+{"level":"info","message":"Client disconnect: 0e74db18-1ea6-4cac-ab80-360bc9a0eeed","timestamp":"2025-05-15T05:38:28.790Z"}
+{"level":"info","message":"Create new client: 86866b80-a98f-4a59-b195-82d8849a3a99","timestamp":"2025-05-15T06:03:22.626Z"}
+{"level":"info","message":"Create new client: e120006d-5e3e-473b-ba9e-162d18f8513b","timestamp":"2025-05-15T06:03:22.693Z"}
+{"level":"error","message":"Can not find subscription with clientId e120006d-5e3e-473b-ba9e-162d18f8513b subscriptionId 1","timestamp":"2025-05-15T06:03:22.704Z"}
+{"functionName":"getNotes","level":"info","message":"Ran cloud function getNotes for user dm1bSATgbP with:\n  Input: {}\n  Result: []","params":{},"timestamp":"2025-05-15T06:03:22.776Z","user":"dm1bSATgbP"}
+{"functionName":"getNotes","level":"info","message":"Ran cloud function getNotes for user dm1bSATgbP with:\n  Input: {}\n  Result: []","params":{},"timestamp":"2025-05-15T06:03:22.779Z","user":"dm1bSATgbP"}
+{"level":"info","message":"Create new client: 6795eff6-af75-4122-b078-e1f16d285974","timestamp":"2025-05-15T06:03:23.420Z"}
+{"functionName":"login","level":"info","message":"Ran cloud function login for user undefined with:\n  Input: {\"email\":\"khanroohullah98k@gmail.com\",\"password\":\"********\"}\n  Result: {\"message\":\"Login successful\",\"sessionToken\":\"r:361e3293e1fa2c842bdfbee123e66962\",\"user\":{\"id\":\"vBREQlbp1N\",\"email\":\"khanroohullah98k@gmail.com\",\"role\":\"user\"}}","params":{"email":"khanroohullah98k@gmail.com","password":"********"},"timestamp":"2025-05-15T06:14:19.846Z"}
+{"functionName":"getNotes","level":"info","message":"Ran cloud function getNotes for user vBREQlbp1N with:\n  Input: {}\n  Result: []","params":{},"timestamp":"2025-05-15T06:14:20.081Z","user":"vBREQlbp1N"}
+{"functionName":"getNotes","level":"info","message":"Ran cloud function getNotes for user vBREQlbp1N with:\n  Input: {}\n  Result: []","params":{},"timestamp":"2025-05-15T06:14:20.084Z","user":"vBREQlbp1N"}
+{"functionName":"login","level":"info","message":"Ran cloud function login for user undefined with:\n  Input: {\"email\":\"rooh@gmail.com\",\"password\":\"********\"}\n  Result: {\"message\":\"Login successful\",\"sessionToken\":\"r:64dd81732efb39e24b3c9dcf0308d26f\",\"user\":{\"id\":\"dm1bSATgbP\",\"email\":\"rooh@gmail.com\",\"role\":\"user\"}}","params":{"email":"rooh@gmail.com","password":"********"},"timestamp":"2025-05-15T06:14:40.373Z"}
+{"functionName":"getNotes","level":"info","message":"Ran cloud function getNotes for user dm1bSATgbP with:\n  Input: {}\n  Result: []","params":{},"timestamp":"2025-05-15T06:14:40.565Z","user":"dm1bSATgbP"}
+{"functionName":"getNotes","level":"info","message":"Ran cloud function getNotes for user dm1bSATgbP with:\n  Input: {}\n  Result: []","params":{},"timestamp":"2025-05-15T06:14:40.569Z","user":"dm1bSATgbP"}

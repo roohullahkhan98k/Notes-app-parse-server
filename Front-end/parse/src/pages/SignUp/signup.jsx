@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import Parse from '../../parseConfig';
 import { useNavigate } from 'react-router-dom';
-
-import './signup.css';
-
-
+import {
+  Box,
+  Button,
+  TextField,
+  Typography,
+  Container,
+  Paper,
+  Stack,
+} from '@mui/material';
 
 const Signup = () => {
   const [email, setEmail] = useState('');
@@ -13,29 +18,56 @@ const Signup = () => {
 
   const handleSignup = async () => {
     try {
-      const response = await Parse.Cloud.run("signup", { email, password });
- 
-      await Parse.User.become(response.sessionToken); 
-      
-      alert("success " + response.message);
-      navigate('/home'); 
-
+      const response = await Parse.Cloud.run('signup', { email, password });
+      await Parse.User.become(response.sessionToken);
+      alert('Success: ' + response.message);
+      navigate('/home');
     } catch (error) {
-      alert("Error: " + error.message);
+      alert('Error: ' + error.message);
     }
   };
-  
 
   return (
-<div className="auth-container">
-  <div className="auth-box">
-    <h2>Signup</h2>
-    <input type="text" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
-    <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
-    <button onClick={handleSignup}>Sign Up</button>
-    <button onClick={() => navigate('/')}>Already have an account</button>
-  </div>
-</div>
+    <Container maxWidth="sm" sx={{ mt: 8 }}>
+      <Paper elevation={6} sx={{ p: 4, borderRadius: 3 }}>
+        <Typography variant="h4" component="h1" fontWeight="bold" mb={3} align="center">
+          Create Your Account
+        </Typography>
+
+        <Stack spacing={3}>
+          <TextField
+            label="Email"
+            variant="outlined"
+            type="email"
+            fullWidth
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+
+          <TextField
+            label="Password"
+            variant="outlined"
+            type="password"
+            fullWidth
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+
+          <Button variant="contained" color="primary" size="large" onClick={handleSignup} fullWidth>
+            Sign Up
+          </Button>
+
+          <Button
+            variant="text"
+            color="secondary"
+            onClick={() => navigate('/')}
+            fullWidth
+          >
+            Already have an account? Log In
+          </Button>
+        </Stack>
+      </Paper>
+    </Container>
   );
 };
 
