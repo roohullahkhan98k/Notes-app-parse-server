@@ -6,4 +6,8 @@ export {default as NoteList} from './NoteList/NoteList';
 export {default as NoteCard} from './NoteCard/NoteCard';
 export {default as NoteForm} from './NoteForm/NoteForm';
 export {default as NotificationDropdown} from './NotificationDropdown';
+export {default as AnalyticsOverview} from './AdminAnalytics/AnalyticsOverview';
+export {default as UsersNotesBarChart} from './AdminAnalytics/UsersNotesBarChart';
+export {default as UserStatsCard} from './AdminAnalytics/UserStatsCard';
+export {default as UserStatusChart} from './AdminAnalytics/UserStatusChart';
 

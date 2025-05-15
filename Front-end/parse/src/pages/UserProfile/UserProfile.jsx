@@ -9,14 +9,12 @@ import {
   CircularProgress, 
   Grid, 
   IconButton, 
-  InputAdornment, 
   TextField, 
   Typography,
-  Snackbar,
-  Alert
 } from '@mui/material';
 import { PhotoCamera, Add } from '@mui/icons-material';
 import Parse from '../../parseConfig';
+import { SnackbarAlert } from '../../components';
 
 const UserProfile = () => {
   const [image, setImage] = useState(null);
@@ -188,11 +186,12 @@ const UserProfile = () => {
           </Grid>
         </CardContent>
       </Card>
-      <Snackbar open={snackbar.open} autoHideDuration={6000} onClose={handleCloseSnackbar}>
-        <Alert onClose={handleCloseSnackbar} severity={snackbar.severity} sx={{ width: '100%' }}>
-          {snackbar.message}
-        </Alert>
-      </Snackbar>
+      <SnackbarAlert
+        open={snackbar.open}
+        message={snackbar.message}
+        severity={snackbar.severity}
+        onClose={handleCloseSnackbar}
+      />
     </Box>
   );
 };
