@@ -11,6 +11,7 @@ import {
   Paper,
 } from "@mui/material";
 
+import "./home.scss";
 const Home = () => {
   const [notes, setNotes] = useState([]);
   const [title, setTitle] = useState("");
@@ -145,6 +146,8 @@ const Home = () => {
   }, []);
 
   return (
+    <>
+    <div className="Home-title">User Notes</div>
     <Container maxWidth="md" sx={{ py: 4 }}>
       <NotificationDropdown />
       <Paper elevation={3} sx={{ p: 3, borderRadius: 3, mb: 4 }}>
@@ -257,6 +260,7 @@ const Home = () => {
         ]}
       />
     </Container>
+    </>
   );
 };
 

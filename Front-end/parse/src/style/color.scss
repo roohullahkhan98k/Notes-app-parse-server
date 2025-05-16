@@ -1,0 +1,10 @@
+$primary-green: #00a599; 
+$granite-gray: #585858;
+
+@mixin primary-text($color: $primary-green) {
+    color: $color;
+    background: linear-gradient(90deg, #00a599 30%, #34C759 70%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }

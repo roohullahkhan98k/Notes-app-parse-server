@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import Parse from "../../parseConfig";
 import { CircularProgress } from "@mui/material";
 import { UserStatsCard,UserStatusChart,AnalyticsOverview,UsersNotesBarChart } from "../../components";
+
+import "./analytics.scss";
+
 const Analytics = () => {
   const [totalUsers, setTotalUsers] = useState(0);
   const [totalNotes, setTotalNotes] = useState(0);
@@ -40,9 +43,9 @@ const Analytics = () => {
   const userPercentage = (totalUsers / total) * 100;
   const notesPercentage = (totalNotes / total) * 100;
 
-  return (
+  return (<>
+      <div className="Analytics-Title">Analytics Dashboard</div>
     <div className="p-10">
-      <h1 className="text-3xl font-bold mb-8">Analytics Dashboard</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
         <UserStatsCard
@@ -76,6 +79,7 @@ const Analytics = () => {
         totalNotes={totalNotes}
       />
     </div>
+      </>
   );
 };
 

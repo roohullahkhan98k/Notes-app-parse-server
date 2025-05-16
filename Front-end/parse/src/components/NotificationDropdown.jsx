@@ -87,7 +87,7 @@ const NotificationDropdown = () => {
   };
 
   return (
-    <div style={{ position: "absolute", top: 75, right: 440 }}>
+    <div style={{ position: "absolute", top: 195, right: 440 }}>
       <IconButton onClick={handleMenuOpen}>
         <Badge badgeContent={unreadCount} color="error">
           <NotificationsIcon />

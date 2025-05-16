@@ -1,0 +1,5 @@
+@import "../../style/common.scss";
+
+.Admin-Title{
+@include Title();
+}

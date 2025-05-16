@@ -1,0 +1,5 @@
+@import "../../style/common.scss";
+
+.UserProfile-Title{
+    @include Title();
+}

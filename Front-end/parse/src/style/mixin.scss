@@ -1,0 +1,27 @@
+@import "./color.scss"; 
+
+
+@mixin Title {
+  font-size: 4.9375rem;
+  font-weight: 700;
+  line-height: 1.1;
+  padding-top: 2.5rem; 
+  text-align: center;
+  @include primary-text();
+
+  @media (max-width: $breakpoint-large) {
+    font-size: 3.75rem; 
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 3.125rem;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 1.875rem; 
+  }
+
+  @media (max-width: $breakpoint-medium-small-mobile) {
+    font-size: 1.5625rem; 
+  }
+}
