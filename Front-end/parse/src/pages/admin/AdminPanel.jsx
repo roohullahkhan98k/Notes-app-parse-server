@@ -7,6 +7,8 @@ import {
   DialogContentText,
 } from "@mui/material";
 
+import "./admin.scss";
+
 const AdminPanel = () => {
   const [users, setUsers] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
@@ -113,7 +115,8 @@ const AdminPanel = () => {
   }, []);
 
   return (
-   <div style={{ padding: '2rem 0' }}>
+   <div>
+        <div className="Admin-Title">Users Managment</div>
       <AdminTable
         users={users}
         handleSuspendClick={handleSuspendClick}

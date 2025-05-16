@@ -9,12 +9,9 @@ import {
   Button,
 } from '@mui/material';
 
-import "./admintable.scss"
-
 const AdminTable = ({ users, handleSuspendClick, handleReactivateClick, navigate }) => {
   return (
 <>
-    <div className="Admin-Title">User Managment</div>
     <TableContainer component={Paper}>
       <Table>
         <TableHead>

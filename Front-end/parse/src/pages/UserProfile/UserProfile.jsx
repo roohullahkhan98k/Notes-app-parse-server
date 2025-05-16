@@ -11,7 +11,7 @@ const UserProfile = () => {
   };
 
   return (
-    <Box sx={{ padding: 2 }}>
+    <Box sx={{ padding: 0}}>
       <div className="UserProfile-Title">User Profile</div>
       <Tabs value={activeTab} onChange={handleTabChange} sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tab label="Profile" />
